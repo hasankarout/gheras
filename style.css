@@ -1,0 +1,337 @@
+:root {
+/* الألوان الأساسية المستخرجة من اللوغو */
+--brand-green: #386641; /* الأخضر الزيتي الرئيسي */
+--brand-green-light: #4c8b59; /* أخضر أفتح للبرودرات والأزرار */
+--brand-pink: #ec4899; /* الوردي الزاهي للتفاصيل والزخارف */
+--brand-pink-light: #fbcfe8; /* وردي ناعم خلفيات */
+/* خلفية داكنة وفخمة */
+--bg-dark: #0a130d; /* زيتوني داكن جداً وفخم */
+--card-bg: rgba(20, 35, 25, 0.75);
+--border-color: rgba(76, 139, 89, 0.3);
+
+--text-main: #f8fafc;
+--text-muted: #94a3b8;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Tajawal', sans-serif;
+}
+
+body {
+background-color: var(--bg-dark);
+color: var(--text-main);
+line-height: 1.6;
+padding: 20px;
+}
+
+/* الهيدر */
+.app-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--card-bg);
+border: 1px solid var(--border-color);
+padding: 15px 25px;
+border-radius: 16px;
+margin-bottom: 25px;
+backdrop-filter: blur(10px);
+}
+
+.logo-box {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.logo-icon {
+font-size: 2.2rem;
+color: var(--brand-pink);
+}
+
+.logo-text h1 {
+font-size: 1.3rem;
+color: var(--text-main);
+}
+
+.logo-text p {
+font-size: 0.85rem;
+color: var(--brand-pink-light);
+}
+
+.motto-tag {
+color: var(--brand-pink-light);
+font-size: 0.95rem;
+font-weight: 500;
+background: rgba(236, 72, 153, 0.1);
+padding: 6px 14px;
+border-radius: 20px;
+border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+/* الكروت العامة */
+.main-container {
+max-width: 1000px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 25px;
+}
+
+.card {
+background: var(--card-bg);
+border: 1px solid var(--border-color);
+padding: 25px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-card h2 {
+color: var(--brand-pink-light);
+margin-bottom: 8px;
+}
+
+.subtitle {
+color: var(--text-muted);
+font-size: 0.95rem;
+margin-bottom: 20px;
+}
+
+/* النماذج والمدخلات */
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-bottom: 18px;
+}
+
+.form-group label {
+font-weight: 500;
+color: var(--brand-pink-light);
+}
+
+textarea, select {
+background: rgba(0, 0, 0, 0.4);
+border: 1px solid var(--border-color);
+color: #fff;
+padding: 12px;
+border-radius: 10px;
+outline: none;
+font-size: 0.95rem;
+}
+
+textarea:focus, select:focus {
+border-color: var(--brand-pink);
+}
+
+.grid-3 {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 15px;
+}
+
+.btn {
+padding: 12px 20px;
+border: none;
+border-radius: 12px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--brand-green-light), var(--brand-pink));
+color: #fff;
+width: 100%;
+font-size: 1.05rem;
+margin-top: 10px;
+}
+
+.btn-primary:hover {
+opacity: 0.9;
+transform: translateY(-2px);
+}
+
+/* قائمة اللقطات (Shot List) */
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.assistant-tag {
+background: rgba(56, 102, 65, 0.3);
+color: var(--brand-pink-light);
+padding: 5px 12px;
+border-radius: 8px;
+font-size: 0.85rem;
+}
+
+.shots-grid {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.shot-card {
+background: rgba(0, 0, 0, 0.3);
+border-right: 4px solid var(--brand-pink);
+padding: 15px;
+border-radius: 8px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.shot-title {
+font-weight: bold;
+color: var(--brand-pink-light);
+}
+
+/* تبويبات الأستوديو */
+.tabs-nav {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+border-bottom: 1px solid var(--border-color);
+padding-bottom: 10px;
+}
+
+.tab-btn {
+background: transparent;
+border: none;
+color: var(--text-muted);
+padding: 8px 16px;
+cursor: pointer;
+font-size: 0.95rem;
+border-radius: 8px;
+}
+
+.tab-btn.active {
+background: var(--brand-green);
+color: #fff;
+}
+
+.tab-content {
+display: none;
+}
+
+.tab-content.active {
+display: block;
+}
+
+.tools-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 15px;
+}
+
+.tool-card {
+background: rgba(0, 0, 0, 0.3);
+border: 1px solid var(--border-color);
+padding: 15px;
+border-radius: 12px;
+}
+
+.tool-header {
+display: flex;
+justify-content: space-between;
+margin-bottom: 8px;
+}
+
+.status-badge {
+font-size: 0.7rem;
+padding: 3px 8px;
+border-radius: 6px;
+font-weight: bold;
+}
+
+.status-badge.available { background: #10b981; color: #000; }
+.status-badge.auth { background: #f59e0b; color: #000; }
+
+.tool-card p {
+font-size: 0.85rem;
+color: var(--text-muted);
+margin-bottom: 12px;
+}
+
+.tool-link {
+color: var(--brand-pink);
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: bold;
+}
+
+.hidden { display: none; }
+
+.app-footer {
+text-align: center;
+color: var(--text-muted);
+font-size: 0.85rem;
+margin-top: 30px;
+}
+
+/* تنسيق صورة اللوغو بالهيدر */
+.logo-img {
+height: 55px; /* كبر أو صغر الارتفاع حسب ما تراه مناسباً */
+width: auto;
+object-fit: contain;
+filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* كرت قناة القرآن الكريم (غراس يُبتغى) */
+.quran-card {
+border-right: 4px solid var(--brand-pink);
+background: linear-gradient(135deg, rgba(20, 35, 25, 0.95), rgba(10, 19, 13, 0.85));
+margin-top: 10px;
+}
+
+.quran-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.quran-info {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.quran-icon {
+font-size: 2.2rem;
+color: var(--brand-pink-light);
+}
+
+.quran-info h3 {
+color: var(--brand-pink-light);
+font-size: 1.1rem;
+margin-bottom: 3px;
+}
+
+.quran-info p {
+color: var(--text-muted);
+font-size: 0.88rem;
+}
+
+.btn-insta {
+background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+color: #fff;
+text-decoration: none;
+padding: 10px 20px;
+border-radius: 12px;
+font-weight: bold;
+font-size: 0.95rem;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.btn-insta:hover {
+transform: translateY(-2px) scale(1.03);
+box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+}

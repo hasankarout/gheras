@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استويو غراس - AI Content Studio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- الهيدر واللوغو -->
+<header class="app-header">
+<div class="header-right">
+<div class="logo-box">
+<!-- استبدلنا الأيقونة بصورة اللوغو الحقيقية -->
+<img src="logo.png" alt="لوغو استوديو اللجنة النسائية" class="logo-img">
+<div class="logo-text">
+<h1>استوديو غراس</h1>
+<p>الإخراجي والإنتاجي</p>
+</div>
+</div>
+</div>
+<div class="header-left">
+<span class="motto-tag">«بالخير نُكمل، وعلى طريق التمكين نُنتج»</span>
+</div>
+</header>
+
+<main class="main-container">
+<!-- قسم الترحيب والموجه (Guided Wizard) -->
+<section class="card hero-card">
+<h2><i class="fa-solid fa-wand-magic-sparkles"></i> صانع المحتوى الذكي – من الفكرة إلى الإخراج</h2>
+<p class="subtitle">منصتكم الشاملة لصناعة محتوى إعلامي هادف ومؤثر يُمكّن الصوت والإبداع النسائي.</p>
+
+<div class="form-group">
+<label for="ideaInput"><i class="fa-solid fa-lightbulb"></i> ما هي الفكرة الإعلامية؟</label>
+<textarea id="ideaInput" rows="3" placeholder="أدخلي فكرة الفيديو، الحملة التوعوية، أو القصة هنا..."></textarea>
+</div>
+
+<div class="grid-3">
+<div class="form-group">
+<label for="contentLang"><i class="fa-solid fa-language"></i> لغة المحتوى</label>
+<select id="contentLang">
+<option value="ar">العربية (Arabic)</option>
+<option value="en">الإنجليزية (English)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="contentDialect"><i class="fa-solid fa-comments"></i> اللهجة</label>
+<select id="contentDialect">
+<option value="lebanese">لبنانية / فصحى مبسطة</option>
+<option value="fusha">فصحى أنيقة</option>
+<option value="none">بدون (نص بصرى / موسيقى)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="contentTone"><i class="fa-solid fa-sliders"></i> النبرة الإخراجية</label>
+<select id="contentTone">
+<option value="inspiring">مُلهمة وتمكينية (Inspiring)</option>
+<option value="awareness">توعوية ومباشرة (Awareness)</option>
+<option value="documentary">وثائقية قصصية (Documentary)</option>
+</select>
+</div>
+</div>
+
+<button id="generateBriefBtn" class="btn btn-primary">
+<i class="fa-solid fa-clapperboard"></i> إنشاء خطة الإخراج وتوزيع اللقطات ⚡
+</button>
+</section>
+
+<!-- قسم قائمة اللقطات (Shot List) -->
+<section id="shotsSection" class="card hidden">
+<div class="section-header">
+<h2><i class="fa-solid fa-list-check"></i> قائمة اللقطات الإخراجية (Shot List)</h2>
+<span class="assistant-tag"><i class="fa-solid fa-user-ninja"></i> المساعدة الإخراجية: مشيرة</span>
+</div>
+
+<div id="shotsContainer" class="shots-grid">
+<!-- اللقطات بتنزل هتك ديناميكياً -->
+</div>
+</section>
+
+<!-- قسم أستوديو الأدوات المباشر (Manual Studio Tabs) -->
+<section class="card manual-studio">
+<h2><i class="fa-solid fa-toolbox"></i> أستوديو الأدوات المباشرة (Studio Tools)</h2>
+<div class="tabs-nav">
+<button class="tab-btn active" onclick="switchTab('images')"><i class="fa-solid fa-image"></i> توليد الصور</button>
+<button class="tab-btn" onclick="switchTab('video')"><i class="fa-solid fa-video"></i> الفيديو والمونتاج</button>
+<button class="tab-btn" onclick="switchTab('audio')"><i class="fa-solid fa-microphone"></i> التعليق والصوت</button>
+<button class="tab-btn" onclick="switchTab('script')"><i class="fa-solid fa-pen-nib"></i> السكريبت والنصوص</button>
+</div>
+
+<!-- محتوى الصور -->
+<div id="tab-images" class="tab-content active">
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-header">
+<h3>Pollinations AI</h3>
+<span class="status-badge available">AVAILABLE</span>
+</div>
+<p>توليد صور فائقة الجودة مباشرة وبدون الحاجة لتسجيل دخول.</p>
+<a href="https://pollinations.ai" target="_blank" class="tool-link">افتح الأداة ↗</a>
+</div>
+<div class="tool-card">
+<div class="tool-header">
+<h3>Leonardo AI</h3>
+<span class="status-badge auth">AUTH REQUIRED</span>
+</div>
+<p>تصميم شخصيات وبوسترات احترافية مع حصة مجانية يومياً.</p>
+<a href="https://leonardo.ai" target="_blank" class="tool-link">افتح الأداة ↗</a>
+</div>
+</div>
+</div>
+
+<!-- محتوى الفيديو -->
+<div id="tab-video" class="tab-content">
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-header">
+<h3>CapCut Web</h3>
+<span class="status-badge available">AVAILABLE</span>
+</div>
+<p>مونتاج سحري وإضافة نصوص وتأثيرات مناسبة لمقاطع التوعية والشورتس.</p>
+<a href="https://www.capcut.com" target="_blank" class="tool-link">افتح الأداة ↗</a>
+</div>
+</div>
+</div>
+
+<!-- محتوى الصوت -->
+<div id="tab-audio" class="tab-content">
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-header">
+<h3>ElevenLabs Voice</h3>
+<span class="status-badge available">AVAILABLE</span>
+</div>
+<p>تحويل النصوص لتعليق صوتي واقعي ومؤثر بنبرات متعددة.</p>
+<a href="https://elevenlabs.io" target="_blank" class="tool-link">افتح الأداة ↗</a>
+</div>
+</div>
+</div>
+
+<!-- محتوى السكريبت -->
+<div id="tab-script" class="tab-content">
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-header">
+<h3>ChatGPT / Claude</h3>
+<span class="status-badge available">AVAILABLE</span>
+</div>
+<p>صياغة السكريبتات وحوارات قصص التمكين والرسائل التوعوية.</p>
+<a href="https://chatgpt.com" target="_blank" class="tool-link">افتح الأداة ↗</a>
+</div>
+</div>
+</div>
+
+<!-- كرت قناة غراس يُبتغى (القرآن الكريم) السفلي -->
+<section class="card quran-card">
+<div class="quran-content">
+<div class="quran-info">
+<i class="fa-solid fa-book-quran quran-icon"></i>
+<div>
+<h3>قناة "غراس يُبتغى" – القرآن الكريم</h3>
+<p>تابعوا التلاوات والنفحات الإيمانية والآيات اليومية عبر قناتنا على إنستغرام</p>
+</div>
+</div>
+<a href="https://instagram.com/gherasyobtagha?stkn=MXhiYjl4OW1saDB1bA%3D%3D" target="_blank" class="btn btn-insta">
+<i class="fa-brands fa-instagram"></i> زيارة القناة ↗
+</a>
+</div>
+</section>
+
+</main>
+
+<footer class="app-footer">
+<p>تم بحمد الله. استوديو اللجنة النسائية في الصويري © 2026</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
